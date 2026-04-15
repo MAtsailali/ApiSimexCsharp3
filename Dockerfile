@@ -2,11 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia los archivos de proyecto y restaura
+# Copia los archivos de proyecto y restaura.
 COPY ["ApiSimexCsharp.csproj", "./"]
 RUN dotnet restore "ApiSimexCsharp3.csproj"
 
-# Copia el resto y publica
+# Copia el resto y publica.
 COPY . .
 RUN dotnet publish "ApiSimexCsharp.csproj" -c Release -o /app/publish
 
