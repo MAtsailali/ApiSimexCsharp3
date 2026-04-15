@@ -2,20 +2,21 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia los archivos de proyecto y restaura.
+# 1. Copia el proyecto y restaura
 COPY ["ApiSimexCsharp.csproj", "./"]
-RUN dotnet restore "ApiSimexCsharp3.csproj"
+RUN dotnet restore "ApiSimexCsharp.csproj"
 
-# Copia el resto y publica.
+# 2. Copia el resto y publica
 COPY . .
 RUN dotnet publish "ApiSimexCsharp.csproj" -c Release -o /app/publish
 
-# Etapa final (ejecución)
+# Etapa final
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=build /app/publish
+# CORRECCIÓN AQUÍ: Añadido el punto al final
+COPY --from=build /app/publish .
 
-# Obligamos a .NET a usar tu puerto específico
+# Configuración de puerto
 ENV ASPNETCORE_URLS=http://+:5198
 EXPOSE 5198
 
