@@ -130,4 +130,79 @@ public class CommercialController : ControllerBase
         }
         catch (Exception ex) { return StatusCode(500, new { error = ex.Message }); }
     }
+
+
+    [HttpPost("register-client")]
+    public async Task<IActionResult> RegisterClient([FromBody] RegisterClientRequestDto dto)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        try
+        {
+            // 1. Validar Moneda (Esta tabla suele ser fija, no creamos nuevas)
+            var currency = await _context.Currencies
+                .FirstOrDefaultAsync(c => c.Id == dto.CurrencyId);
+
+            if (currency == null) return BadRequest(new { error = "La moneda especificada no es válida." });
+
+            // 2. Manejo de Industria (Buscar o Crear)
+            var industria = await _context.Industria
+                .FirstOrDefaultAsync(i => i.Categoria == dto.IndustryName);
+            if (industria == null)
+            {
+                industria = new Industrium { Categoria = dto.IndustryName };
+                _context.Industria.Add(industria);
+                await _context.SaveChangesAsync();
+            }
+
+            // 3. Crear Company
+            var newCompany = new Company
+            {
+                CompanyName = dto.CompanyName,
+                IndustriaId = industria.Id,
+                // Si en tu tabla Company añadiste CurrencyId:
+                // CurrencyId = currency.Id 
+            };
+            _context.Companies.Add(newCompany);
+            await _context.SaveChangesAsync();
+
+            // 4. Crear Usuario (RolId 3 fijo)
+            var newUser = new Usuari
+            {
+                Correu = dto.Correu,
+                Nom = dto.Nom,
+                Cognoms = dto.Cognoms,
+                Tlfn = dto.Tlfn,
+                Contrasenya = BCrypt.Net.BCrypt.HashPassword("123456"), // Password inicial
+                RolId = 3,
+                CompanyId = newCompany.Id,
+                Status = 1
+            };
+            _context.Usuaris.Add(newUser);
+            await _context.SaveChangesAsync();
+
+            await transaction.CommitAsync();
+            return Ok(new { message = "Registro completo" });
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            return StatusCode(500, new { error = "Error interno: " + ex.Message });
+        }
+    }
+
+
+    [HttpGet("industria")]
+    public async Task<ActionResult<IEnumerable<Industrium>>> GetIndustrias()
+    {
+        return await _context.Industria
+            .OrderBy(i => i.Categoria)
+            .ToListAsync();
+    }
+
+    [HttpGet("currency")]
+    public async Task<ActionResult<IEnumerable<Currency>>> GetCurrencies()
+    {
+        
+        return await _context.Currencies.ToListAsync();
+    }
 }

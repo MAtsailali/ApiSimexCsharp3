@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
+    "Method": "GetCurrencies",
+    "RelativePath": "api/commercial/currency",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSimexCsharp.Models.Currency, ApiSimexCsharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
     "Method": "GetDashboard",
     "RelativePath": "api/commercial/dashboard/{userId}",
     "HttpMethod": "GET",
@@ -16,6 +36,26 @@
     "ReturnTypes": [
       {
         "Type": "ApiSimexCsharp.DTO.CommercialDashboardDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
+    "Method": "GetIndustrias",
+    "RelativePath": "api/commercial/industria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSimexCsharp.Models.Industrium, ApiSimexCsharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -68,6 +108,22 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
+    "Method": "RegisterClient",
+    "RelativePath": "api/commercial/register-client",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiSimexCsharp.DTO.RegisterClientRequestDto",
         "IsRequired": true
       }
     ],

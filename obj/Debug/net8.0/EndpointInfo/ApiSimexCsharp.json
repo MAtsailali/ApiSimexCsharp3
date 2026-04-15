@@ -114,6 +114,113 @@
         }
       }
     },
+    "/api/commercial/register-client": {
+      "post": {
+        "tags": [
+          "Commercial"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClientRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClientRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterClientRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/commercial/industria": {
+      "get": {
+        "tags": [
+          "Commercial"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Industrium"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Industrium"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Industrium"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/commercial/currency": {
+      "get": {
+        "tags": [
+          "Commercial"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Currency"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Currency"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Currency"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -156,6 +263,88 @@
   },
   "components": {
     "schemas": {
+      "Aeroport": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codi": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCiutat": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idCiutatNavigation": {
+            "$ref": "#/components/schemas/Ciutat"
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ciutat": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "paisId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "aeroports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Aeroport"
+            },
+            "nullable": true
+          },
+          "liniesTransportMaritims": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LiniesTransportMaritim"
+            },
+            "nullable": true
+          },
+          "pais": {
+            "$ref": "#/components/schemas/Paisso"
+          },
+          "ports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Port"
+            },
+            "nullable": true
+          },
+          "transportistes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transportiste"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CommercialDashboardDto": {
         "type": "object",
         "properties": {
@@ -174,6 +363,957 @@
           "rejected_count": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Company": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "industriaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "industria": {
+            "$ref": "#/components/schemas/Industrium"
+          },
+          "notificacionDestinatarios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificacionDestinatario"
+            },
+            "nullable": true
+          },
+          "usuaris": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Usuari"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Currency": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency1": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Divisa": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EstatsOferte": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estat": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IaMessage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "iaMessage1": {
+            "type": "string",
+            "nullable": true
+          },
+          "idUser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idUserNavigation": {
+            "$ref": "#/components/schemas/Usuari"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Incoterm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipusIncontermId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "trackingStepsId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "incotermPasos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncotermPaso"
+            },
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          },
+          "tipusInconterm": {
+            "$ref": "#/components/schemas/TipusIncoterm"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IncotermPaso": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "incotermId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trackingStepId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "incoterm": {
+            "$ref": "#/components/schemas/Incoterm"
+          },
+          "trackingStep": {
+            "$ref": "#/components/schemas/TrackingStep"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Industrium": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "companies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Company"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LiniesTransportMaritim": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciutatId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ciutat": {
+            "$ref": "#/components/schemas/Ciutat"
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificacionDestinatario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "notificacionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "leida": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "notificacion": {
+            "$ref": "#/components/schemas/Notificacione"
+          },
+          "user": {
+            "$ref": "#/components/schemas/Usuari"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Notificacione": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "emisorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "emisor": {
+            "$ref": "#/components/schemas/Usuari"
+          },
+          "notificacionDestinatarios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificacionDestinatario"
+            },
+            "nullable": true
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/Tipo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OfertaSeguimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ofertaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trackingStepId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orden": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estaCompletado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaCompletado": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentoPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "oferta": {
+            "$ref": "#/components/schemas/Oferte"
+          },
+          "trackingStep": {
+            "$ref": "#/components/schemas/TrackingStep"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Oferte": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipusTransportId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipusFluxeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipusCarregaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "incotermId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clientId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripMercancia": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentComercialId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "transportistaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pesBrut": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "volum": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "tipusValidacioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "portOrigenId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "portDestiId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "aeroportOrigenId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "aeroportDestiId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "liniaTransportMaritimId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estatOfertaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "operadorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataCreacio": {
+            "type": "string",
+            "format": "date"
+          },
+          "dataValidessaInicial": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "dataValidessaFina": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "raoRebuig": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipusContenidorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "divisasId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "concepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "bultos": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentariosInternos": {
+            "type": "string",
+            "nullable": true
+          },
+          "comentariosImprimir": {
+            "type": "string",
+            "nullable": true
+          },
+          "aeroportOrigen": {
+            "$ref": "#/components/schemas/Aeroport"
+          },
+          "divisas": {
+            "$ref": "#/components/schemas/Divisa"
+          },
+          "estatOferta": {
+            "$ref": "#/components/schemas/EstatsOferte"
+          },
+          "incoterm": {
+            "$ref": "#/components/schemas/Incoterm"
+          },
+          "liniaTransportMaritim": {
+            "$ref": "#/components/schemas/LiniesTransportMaritim"
+          },
+          "ofertaSeguimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfertaSeguimiento"
+            },
+            "nullable": true
+          },
+          "operador": {
+            "$ref": "#/components/schemas/Usuari"
+          },
+          "portOrigen": {
+            "$ref": "#/components/schemas/Port"
+          },
+          "tipusCarrega": {
+            "$ref": "#/components/schemas/TipusCarrega"
+          },
+          "tipusContenidor": {
+            "$ref": "#/components/schemas/TipusContenidor"
+          },
+          "tipusFluxe": {
+            "$ref": "#/components/schemas/TipusFlux"
+          },
+          "tipusTransport": {
+            "$ref": "#/components/schemas/TipusTransport"
+          },
+          "tipusValidacio": {
+            "$ref": "#/components/schemas/TipusValidacion"
+          },
+          "transportista": {
+            "$ref": "#/components/schemas/Transportiste"
+          },
+          "portDesti": {
+            "$ref": "#/components/schemas/Port"
+          },
+          "aeroportDesti": {
+            "$ref": "#/components/schemas/Aeroport"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Paisso": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciutats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ciutat"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Port": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCiutat": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idCiutatNavigation": {
+            "$ref": "#/components/schemas/Ciutat"
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterClientRequestDto": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "industryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxId": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "correu": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "cognoms": {
+            "type": "string",
+            "nullable": true
+          },
+          "tlfn": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasenya": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rol": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rol1": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuaris": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Usuari"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tipo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "notificaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Notificacione"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusCarrega": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusContenidor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusFlux": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusIncoterm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codi": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "incoterms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Incoterm"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusTransport": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipusValidacion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TrackingStep": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ordre": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "incotermPasos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncotermPaso"
+            },
+            "nullable": true
+          },
+          "ofertaSeguimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OfertaSeguimiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Transportiste": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciutatId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ciutat": {
+            "$ref": "#/components/schemas/Ciutat"
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuari": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "correu": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasenya": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "cognoms": {
+            "type": "string",
+            "nullable": true
+          },
+          "rolId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tlfn": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ultimaConex": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "iaMessages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IaMessage"
+            },
+            "nullable": true
+          },
+          "notificacionDestinatarios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificacionDestinatario"
+            },
+            "nullable": true
+          },
+          "notificaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Notificacione"
+            },
+            "nullable": true
+          },
+          "ofertes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Oferte"
+            },
+            "nullable": true
+          },
+          "rol": {
+            "$ref": "#/components/schemas/Rol"
           }
         },
         "additionalProperties": false
