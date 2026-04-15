@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\controllers\\commercialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:controllers\\commercialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\dto\\commercialdashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\commercialdashboarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\models\\oferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:models\\oferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\dto\\rejectedquotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\rejectedquotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp\\models\\simex01context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:models\\simex01context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RejectedQuoteDto.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\DTO\\RejectedQuoteDto.cs",
+              "RelativeDocumentMoniker": "DTO\\RejectedQuoteDto.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\DTO\\RejectedQuoteDto.cs",
+              "RelativeToolTip": "DTO\\RejectedQuoteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T09:29:50.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Oferte.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Models\\Oferte.cs",
+              "RelativeDocumentMoniker": "Models\\Oferte.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Models\\Oferte.cs",
+              "RelativeToolTip": "Models\\Oferte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T22:14:37.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-14T22:07:47.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T22:06:14.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CommercialController.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Controllers\\CommercialController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommercialController.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Controllers\\CommercialController.cs",
+              "RelativeToolTip": "Controllers\\CommercialController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswCMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T22:04:13.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommercialDashboardDto.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\DTO\\CommercialDashboardDto.cs",
+              "RelativeDocumentMoniker": "DTO\\CommercialDashboardDto.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\DTO\\CommercialDashboardDto.cs",
+              "RelativeToolTip": "DTO\\CommercialDashboardDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T22:03:26.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Simex01Context.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Models\\Simex01Context.cs",
+              "RelativeDocumentMoniker": "Models\\Simex01Context.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp\\Models\\Simex01Context.cs",
+              "RelativeToolTip": "Models\\Simex01Context.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T22:01:58.974Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

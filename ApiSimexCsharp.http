@@ -1,0 +1,6 @@
+@ApiSimexCsharp_HostAddress = http://localhost:5198
+
+GET {{ApiSimexCsharp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
