@@ -1,12 +1,19 @@
 ﻿namespace ApiSimexCsharp.Controllers;
 using ApiSimexCsharp.DTO;
 using ApiSimexCsharp.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 [ApiController]
-[Route("api/commercial")]
+[Route("api/")]
 public class CommercialController : ControllerBase
 {
     private readonly Simex01Context _context;
@@ -16,7 +23,8 @@ public class CommercialController : ControllerBase
         _context = context;
     }
 
-    [HttpGet("dashboard/{userId}")]
+
+    [HttpGet("commercial/dashboard/{userId}")]
     public async Task<ActionResult<CommercialDashboardDto>> GetDashboard(int userId)
     {
         try
@@ -57,7 +65,7 @@ public class CommercialController : ControllerBase
     }
 
 
-    [HttpGet("ofertes/sent/{userId}")]
+    [HttpGet("commercial/ofertes/sent/{userId}")]
     public async Task<ActionResult> GetSentQuotes(int userId)
     {
         try
@@ -81,8 +89,8 @@ public class CommercialController : ControllerBase
         catch (Exception ex) { return StatusCode(500, new { error = ex.Message }); }
     }
 
-
-    [HttpGet("ofertes/accepted/{userId}")]
+ 
+    [HttpGet("commercial/ofertes/accepted/{userId}")]
     public async Task<ActionResult> GetAcceptedQuotes(int userId)
     {
         try
@@ -106,8 +114,8 @@ public class CommercialController : ControllerBase
         catch (Exception ex) { return StatusCode(500, new { error = ex.Message }); }
     }
 
-
-    [HttpGet("ofertes/rejected/{userId}")]
+  
+    [HttpGet("commercial/ofertes/rejected/{userId}")]
     public async Task<ActionResult> GetRejectedQuotes(int userId)
     {
         try
@@ -131,8 +139,7 @@ public class CommercialController : ControllerBase
         catch (Exception ex) { return StatusCode(500, new { error = ex.Message }); }
     }
 
-
-    [HttpPost("register-client")]
+    [HttpPost("commercial/register-client")]
     public async Task<IActionResult> RegisterClient([FromBody] RegisterClientRequestDto dto)
     {
         using var transaction = await _context.Database.BeginTransactionAsync();
@@ -191,7 +198,7 @@ public class CommercialController : ControllerBase
     }
 
 
-    [HttpGet("industria")]
+    [HttpGet("commercial/industria")]
     public async Task<ActionResult<IEnumerable<Industrium>>> GetIndustrias()
     {
         return await _context.Industria
@@ -199,10 +206,70 @@ public class CommercialController : ControllerBase
             .ToListAsync();
     }
 
-    [HttpGet("currency")]
+    [HttpGet("commercial/currency")]
     public async Task<ActionResult<IEnumerable<Currency>>> GetCurrencies()
     {
         
         return await _context.Currencies.ToListAsync();
     }
+
+    [HttpPost("login")]
+    public async Task<ActionResult<LoginResponseDTO>> PostLogin([FromBody] LoginRequest loginReq)
+    {
+
+        var user = await _context.Usuaris.FirstOrDefaultAsync(u => u.Correu == loginReq.Email);
+        if (user == null) return NotFound("Usuario no encontrado");
+
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+        // En producción usa: _configuration["JwtSettings:SecretKey"]
+        var key = Encoding.ASCII.GetBytes("Esta_Es_Una_Clave_Muy_Larga_Y_Segura_De_Al_Menos_64_Caracteres_1234567890");
+
+
+        var claims = new ClaimsIdentity(new[]
+        {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Email, user.Correu),
+        new Claim(ClaimTypes.Role, user.RolId.ToString()),
+        
+        // ESTA ES LA PARTE ALEATORIA: 
+        // Genera un ID único para este token específico.
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    });
+
+        // 4. Configuramos el descriptor del token
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = claims,
+            Expires = DateTime.UtcNow.AddDays(7), // El token caduca en una semana
+            SigningCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature
+            )
+        };
+
+        // 5. Creamos el token físico (string)
+        var tokenConfig = tokenHandler.CreateToken(tokenDescriptor);
+        string tokenString = tokenHandler.WriteToken(tokenConfig);
+
+        // 6. Devolvemos la respuesta que espera tu Android
+        return Ok(new LoginResponseDTO
+        {
+            usuari = new LoginDTO
+            {
+                    Id = user.Id,
+                    correu = user.Correu,
+                    contrasenya = user.Contrasenya,
+                    nom = user.Nom,
+                    cognoms = user.Cognoms,
+                    rolId = user.RolId,
+                    companyId = user.CompanyId,
+                    status = user.Status,
+                    tlfn = user.Tlfn,
+                    ultima_conex = user.UltimaConex
+        },
+       token = tokenString
+    });
+    }
+    public class LoginRequest { public string Email { get; set; } }
 }

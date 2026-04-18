@@ -130,6 +130,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
+    "Method": "PostLogin",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginReq",
+        "Type": "ApiSimexCsharp.Controllers.CommercialController\u002BLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.DTO.LoginResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ApiSimexCsharp.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
