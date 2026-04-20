@@ -38,8 +38,6 @@ public class CommercialController : ControllerBase
             if (nombreUsuario == null) return NotFound("Usuario no encontrado");
 
             // 2. Consultas de conteo en la tabla 'Ofertes'
-            // Filtramos por AgentComercialId (que es el campo en tu clase Oferte)
-
             var pending = await _context.Ofertes
                 .CountAsync(o => o.AgentComercialId == userId && o.EstatOfertaId == 2); // 2 = Pendent
 
@@ -166,8 +164,6 @@ public class CommercialController : ControllerBase
             {
                 CompanyName = dto.CompanyName,
                 IndustriaId = industria.Id,
-                // Si en tu tabla Company añadiste CurrencyId:
-                // CurrencyId = currency.Id 
             };
             _context.Companies.Add(newCompany);
             await _context.SaveChangesAsync();
@@ -179,7 +175,7 @@ public class CommercialController : ControllerBase
                 Nom = dto.Nom,
                 Cognoms = dto.Cognoms,
                 Tlfn = dto.Tlfn,
-                Contrasenya = BCrypt.Net.BCrypt.HashPassword("123456"), // Password inicial
+                Contrasenya = BCrypt.Net.BCrypt.HashPassword("123456"),
                 RolId = 3,
                 CompanyId = newCompany.Id,
                 Status = 1
@@ -222,7 +218,6 @@ public class CommercialController : ControllerBase
 
 
         var tokenHandler = new JwtSecurityTokenHandler();
-        // En producción usa: _configuration["JwtSettings:SecretKey"]
         var key = Encoding.ASCII.GetBytes("Esta_Es_Una_Clave_Muy_Larga_Y_Segura_De_Al_Menos_64_Caracteres_1234567890");
 
 
@@ -231,8 +226,7 @@ public class CommercialController : ControllerBase
         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
         new Claim(ClaimTypes.Email, user.Correu),
         new Claim(ClaimTypes.Role, user.RolId.ToString()),
-        
-        // ESTA ES LA PARTE ALEATORIA: 
+         
         // Genera un ID único para este token específico.
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
     });
@@ -241,7 +235,7 @@ public class CommercialController : ControllerBase
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = claims,
-            Expires = DateTime.UtcNow.AddDays(7), // El token caduca en una semana
+            Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(key),
                 SecurityAlgorithms.HmacSha256Signature

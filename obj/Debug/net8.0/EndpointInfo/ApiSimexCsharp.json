@@ -221,6 +221,54 @@
         }
       }
     },
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Commercial"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -588,6 +636,82 @@
             "items": {
               "$ref": "#/components/schemas/Oferte"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "correu": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrasenya": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "cognoms": {
+            "type": "string",
+            "nullable": true
+          },
+          "rolId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tlfn": {
+            "type": "string",
+            "nullable": true
+          },
+          "ultima_conex": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginResponseDTO": {
+        "type": "object",
+        "properties": {
+          "usuari": {
+            "$ref": "#/components/schemas/LoginDTO"
+          },
+          "token": {
+            "type": "string",
             "nullable": true
           }
         },
