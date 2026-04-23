@@ -510,9 +510,8 @@ E:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\refint\ApiSimexCsharp.dll
 E:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\ApiSimexCsharp.pdb
 E:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\ApiSimexCsharp.genruntimeconfig.cache
 E:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\ref\ApiSimexCsharp.dll
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets\msbuild.ApiSimexCsharp.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets\msbuild.ApiSimexCsharp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets\msbuild.build.ApiSimexCsharp.props
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ApiSimexCsharp.props
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ApiSimexCsharp.props
-D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Proyectos\Simex\ApiSimexCsharp3\obj\Debug\net8.0\staticwebassets.build.json.cache

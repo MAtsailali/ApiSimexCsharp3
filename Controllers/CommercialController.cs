@@ -266,4 +266,73 @@ public class CommercialController : ControllerBase
     });
     }
     public class LoginRequest { public string Email { get; set; } }
+
+    [HttpGet("commercial/active-clients/{userId}")]
+    public async Task<ActionResult<IEnumerable<ClientListDTO>>> GetActiveClients(int userId)
+    {
+        try
+        {
+            // Buscamos las compañías que tienen clientes (RolId = 3) asociados a este comercial
+            // Nota: Filtramos por las ofertas que este comercial gestiona para esas compañías
+            var clientesActivos = await _context.Companies
+                .Include(c => c.Industria)
+                .Select(c => new ClientListDTO
+                {
+                    Id = c.Id,
+                    CompanyName = c.CompanyName,
+                    Industria = c.Industria != null ? c.Industria.Categoria : "Sin sector",
+
+                    // Conteo de ofertas en estado "Activa" (EstatOfertaId == 1) para esta empresa
+                    EnviosActivosCount = _context.Ofertes
+                        .Count(o => o.ClientId == c.Id && o.EstatOfertaId == 1 && o.AgentComercialId == userId),
+
+                    // Resumen de la carga más reciente (Ej: "3 Bultos Contenedor")
+                    UltimaCargaResumen = _context.Ofertes
+                        .Where(o => o.ClientId == c.Id && o.AgentComercialId == userId)
+                        .OrderByDescending(o => o.DataCreacio)
+                        .Select(o => (o.Bultos ?? "0") + " " + (o.TipusCarrega != null ? o.TipusCarrega.Tipus : "Carga"))
+                        .FirstOrDefault() ?? "Sin envíos recientes",
+
+                    // Tipo de transporte para el icono en Android
+                    TipusTransportId = _context.Ofertes
+                        .Where(o => o.ClientId == c.Id && o.AgentComercialId == userId)
+                        .OrderByDescending(o => o.DataCreacio)
+                        .Select(o => o.TipusTransportId)
+                        .FirstOrDefault()
+                })
+                .Where(dto => dto.EnviosActivosCount > 0) // Solo mostramos los que tienen algo activo
+                .ToListAsync();
+
+            return Ok(clientesActivos);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Error al obtener clientes: " + ex.Message });
+        }
+    }
+
+    [HttpGet("commercial/profile/{id}")]
+    public async Task<ActionResult<UserProfileDto>> GetUserProfile(int id)
+    {
+        var user = await _context.Usuaris
+            .Include(u => u.Rol)
+            .Include(u => u.Company)
+                .ThenInclude(c => c.Industria)
+            .FirstOrDefaultAsync(u => u.Id == id);
+
+        if (user == null) return NotFound();
+
+        return new UserProfileDto
+        {
+            UserId = user.Id,
+            FullName = $"{user.Nom} {user.Cognoms}",
+            Email = user.Correu,
+            Phone = user.Tlfn ?? "No asignado",
+            RoleName = user.Rol.Rol1, 
+            CompanyId = user.CompanyId,
+            CompanyName = user.Company?.CompanyName ?? "Sin Empresa",
+            IndustryName = user.Company?.Industria?.Categoria ?? "N/A",
+            ColaboradorId = $"USR-{user.Id:D5}"
+        };
+    }
 }
