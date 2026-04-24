@@ -1,5 +1,6 @@
 ﻿namespace ApiSimexCsharp.Controllers;
 using ApiSimexCsharp.DTO;
+using ApiSimexCsharp.DTO.ApiSimexCsharp.DTO;
 using ApiSimexCsharp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
@@ -335,4 +336,97 @@ public class CommercialController : ControllerBase
             ColaboradorId = $"USR-{user.Id:D5}"
         };
     }
+
+
+
+    [HttpGet("commercial/envios/activos/{userId}")]
+    public async Task<ActionResult<IEnumerable<EnvioActivoDto>>> GetEnviosActivos(int userId)
+    {
+        try
+        {
+            var estadosActivos = new List<int> { 5, 6 }; // 5: Aceptada, 6: Tránsito
+
+            var envios = await _context.Ofertes
+                .Where(o => o.AgentComercialId == userId && estadosActivos.Contains(o.EstatOfertaId))
+                .Include(o => o.PortOrigen)
+                .Include(o => o.PortDesti)
+                .Include(o => o.AeroportOrigen)
+                .Include(o => o.AeroportDesti)
+                .Include(o => o.EstatOferta)
+                .OrderByDescending(o => o.DataCreacio)
+                .Select(o => new EnvioActivoDto
+                {
+                    Id = o.Id,
+                    Cliente = "Cliente Empresa", // Opcional: o.Usuario.Nom si tienes la relación
+                    RutaOrigen = o.PortOrigen != null ? o.PortOrigen.Nom : (o.AeroportOrigen != null ? o.AeroportOrigen.Nom : "N/A"),
+                    RutaDestino = o.PortDesti != null ? o.PortDesti.Nom : (o.AeroportDesti != null ? o.AeroportDesti.Nom : "N/A"),
+                    Concepto = o.Concepto ?? "Carga General",
+                    Estado = o.EstatOferta.Estat,
+                    EstadoId = o.EstatOfertaId,
+                    FechaCreacion = o.DataCreacio.ToString("dd MMM, yyyy"),
+                    TransportTypeId = o.TipusTransportId,
+                    Precio = o.Valor ?? "Consultar"
+                })
+                .ToListAsync();
+
+            return Ok(envios);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Error: " + ex.Message });
+        }
+    }
+
+    [HttpGet("commercial/envios/detalle/{id}")]
+    public async Task<ActionResult<DetalleEnvioDto>> GetDetalleEnvio(int id)
+    {
+        try
+        {
+            var oferta = await _context.Ofertes
+                .Include(o => o.EstatOferta)
+                .Include(o => o.PortOrigen).Include(o => o.PortDesti)
+                .Include(o => o.AeroportOrigen).Include(o => o.AeroportDesti)
+                // IMPORTANTE: Incluimos el seguimiento y la descripción del paso
+                .Include(o => o.OfertaSeguimientos)
+                    .ThenInclude(s => s.TrackingStep)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (oferta == null) return NotFound(new { error = "Envío no encontrado" });
+
+            var detalle = new DetalleEnvioDto
+            {
+                Id = oferta.Id,
+                Cliente = "Empresa Cliente S.A.",
+                Concepto = oferta.Concepto ?? "Envío de mercancía",
+                EstadoActual = oferta.EstatOferta.Estat,
+                FechaCreacion = oferta.DataCreacio.ToString("dd/MM/yyyy"),
+                RutaCompleta = oferta.PortOrigen != null ? $"{oferta.PortOrigen.Nom} - {oferta.PortDesti?.Nom}" :
+                               (oferta.AeroportOrigen != null ? $"{oferta.AeroportOrigen.Nom} - {oferta.AeroportDesti?.Nom}" : "Ruta Terrestre"),
+
+                TrackingSteps = oferta.OfertaSeguimientos
+                    .OrderBy(s => s.Orden) // Usamos tu campo 'Orden' para que la secuencia sea lógica
+                    .Select(s => new TrackingStepDto
+                    {
+                        Id = s.Id,
+                        // ACCEDEMOS AL TÍTULO DESDE LA TABLA RELACIONADA
+                        // (Asumo que el campo en la tabla TrackingStep se llama 'Nom' o 'Descripcio')
+                        Titol = s.TrackingStep.Nom ?? "Estado",
+
+                        // Usamos FechaCompletado o la fecha actual si es nula
+                        DataHora = s.FechaCompletado?.ToString("dd/MM/yyyy, HH:mm") ?? "Pendiente",
+
+                        TeDocument = !string.IsNullOrEmpty(s.DocumentoPath),
+                        NomFitxer = s.DocumentoPath,
+                        Comentari = s.Observaciones ?? ""
+                    }).ToList()
+            };
+
+            return Ok(detalle);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Error al obtener el detalle: " + ex.Message });
+        }
+    }
+
 }
