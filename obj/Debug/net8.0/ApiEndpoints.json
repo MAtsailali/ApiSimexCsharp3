@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "apiSimex.Controllers.ClientController",
+    "Method": "GetClientDashboard",
+    "RelativePath": "api/client/dashboard/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.DTO.ClientDashboardDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
     "Method": "GetActiveClients",
     "RelativePath": "api/commercial/active-clients/{userId}",
@@ -182,6 +208,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apiSimex.Controllers.DashboardController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/Dashboard/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiSimexCsharp.Controllers.CommercialController",
     "Method": "PostLogin",
     "RelativePath": "api/login",
@@ -206,6 +248,323 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.OfertesController",
+    "Method": "GetOfertes",
+    "RelativePath": "api/Ofertes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSimexCsharp.Models.Oferte, ApiSimexCsharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.OfertesController",
+    "Method": "PostOferte",
+    "RelativePath": "api/Ofertes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oferte",
+        "Type": "ApiSimexCsharp.Models.Oferte",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Oferte",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.OfertesController",
+    "Method": "GetOferte",
+    "RelativePath": "api/Ofertes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Oferte",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.OfertesController",
+    "Method": "PutOferte",
+    "RelativePath": "api/Ofertes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "oferte",
+        "Type": "ApiSimexCsharp.Models.Oferte",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.OfertesController",
+    "Method": "DeleteOferte",
+    "RelativePath": "api/Ofertes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.PortsController",
+    "Method": "GetPorts",
+    "RelativePath": "api/Ports",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.PortsController",
+    "Method": "PostPort",
+    "RelativePath": "api/Ports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "port",
+        "Type": "ApiSimexCsharp.Models.Port",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Port",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.PortsController",
+    "Method": "GetPort",
+    "RelativePath": "api/Ports/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Port",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.PortsController",
+    "Method": "PutPort",
+    "RelativePath": "api/Ports/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "port",
+        "Type": "ApiSimexCsharp.Models.Port",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.PortsController",
+    "Method": "DeletePort",
+    "RelativePath": "api/Ports/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.UsuarisController",
+    "Method": "GetUsuaris",
+    "RelativePath": "api/Usuaris",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSimexCsharp.Models.Usuari, ApiSimexCsharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.UsuarisController",
+    "Method": "PostUsuari",
+    "RelativePath": "api/Usuaris",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuari",
+        "Type": "ApiSimexCsharp.Models.Usuari",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Usuari",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.UsuarisController",
+    "Method": "GetUsuari",
+    "RelativePath": "api/Usuaris/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSimexCsharp.Models.Usuari",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.UsuarisController",
+    "Method": "PutUsuari",
+    "RelativePath": "api/Usuaris/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "usuari",
+        "Type": "ApiSimexCsharp.Models.Usuari",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiSimex.Controllers.UsuarisController",
+    "Method": "DeleteUsuari",
+    "RelativePath": "api/Usuaris/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ApiSimexCsharp.Controllers.WeatherForecastController",
