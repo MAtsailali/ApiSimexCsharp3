@@ -434,4 +434,30 @@ public class CommercialController : ControllerBase
         }
     }
 
+    [HttpPost("commercial/confirmar-subida")]
+    public async Task<IActionResult> ConfirmarSubida([FromBody] ConfirmarSubidaDTO dto)
+    {
+        try
+        {
+            // Buscamos en OfertaSeguimientos, que es la tabla que tiene el campo 'DocumentoPath'
+            var seguimiento = await _context.OfertaSeguimientos.FindAsync(dto.StepId);
+
+            if (seguimiento == null)
+                return NotFound(new { error = "No se encontró el paso de seguimiento indicado." });
+
+            // Actualizamos los campos
+            seguimiento.DocumentoPath = dto.FileName;
+            // Si tienes una fecha de completado, la ponemos ahora
+            seguimiento.FechaCompletado = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Registro actualizado correctamente en la base de datos." });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Error al actualizar: " + ex.Message });
+        }
+    }
+
 }
