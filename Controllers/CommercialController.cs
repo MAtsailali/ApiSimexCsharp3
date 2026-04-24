@@ -358,8 +358,13 @@ public class CommercialController : ControllerBase
                 {
                     Id = o.Id,
                     Cliente = "Cliente Empresa", // Opcional: o.Usuario.Nom si tienes la relación
-                    RutaOrigen = o.PortOrigen != null ? o.PortOrigen.Nom : (o.AeroportOrigen != null ? o.AeroportOrigen.Nom : "N/A"),
-                    RutaDestino = o.PortDesti != null ? o.PortDesti.Nom : (o.AeroportDesti != null ? o.AeroportDesti.Nom : "N/A"),
+                    RutaOrigen = o.TipusTransportId == 1 // Asumiendo 1 = Marítimo
+        ? (o.PortOrigen != null ? o.PortOrigen.Nom : "Puerto no asignado")
+        : (o.AeroportOrigen != null ? o.AeroportOrigen.Nom : "Aeropuerto no asignado"),
+
+                    RutaDestino = o.TipusTransportId == 1
+        ? (o.PortDesti != null ? o.PortDesti.Nom : "Puerto no asignado")
+        : (o.AeroportDesti != null ? o.AeroportDesti.Nom : "Aeropuerto no asignado"),
                     Concepto = o.Concepto ?? "Carga General",
                     Estado = o.EstatOferta.Estat,
                     EstadoId = o.EstatOfertaId,
