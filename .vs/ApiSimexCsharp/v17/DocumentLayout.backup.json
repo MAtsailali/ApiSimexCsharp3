@@ -134,7 +134,12 @@
               "RelativeToolTip": "DTO\\ConfirmarSubidaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-04-24T22:08:40.507Z"
+=======
+              "WhenOpened": "2026-04-24T22:08:40.507Z",
+              "EditorCaption": ""
+>>>>>>> origin/main
             },
             {
               "$type": "Document",
@@ -204,7 +209,11 @@
               "RelativeDocumentMoniker": "Controllers\\CommercialController.cs",
               "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\CommercialController.cs",
               "RelativeToolTip": "Controllers\\CommercialController.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAJ4BAAAAAAAAAADwv9IBAAAFAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAKQBAAAAAAAAAADwv8wBAAAFAAAAAAAAAA==",
+>>>>>>> origin/main
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-14T22:04:13.553Z",
               "EditorCaption": ""

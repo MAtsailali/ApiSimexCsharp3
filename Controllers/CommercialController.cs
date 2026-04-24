@@ -1,4 +1,4 @@
-﻿namespace ApiSimexCsharp.Controllers;
+namespace ApiSimexCsharp.Controllers;
 using ApiSimexCsharp.DTO;
 using ApiSimexCsharp.DTO.ApiSimexCsharp.DTO;
 using ApiSimexCsharp.Models;
