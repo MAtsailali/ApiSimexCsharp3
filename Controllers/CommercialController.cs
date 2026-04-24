@@ -434,4 +434,36 @@ public class CommercialController : ControllerBase
         }
     }
 
+    [HttpPost("commercial/confirmar-subida")]
+    public async Task<IActionResult> ConfirmarSubida([FromBody] ConfirmarSubidaDTO dto)
+    {
+        try
+        {
+            // 1. LOG DE ENTRADA: Verifica que el ID llega bien al servidor
+            Console.WriteLine($"Recibida confirmación: ID {dto.StepId}, Archivo {dto.FileName}");
+
+            var seguimiento = await _context.OfertaSeguimientos
+                .FirstOrDefaultAsync(x => x.Id == dto.StepId);
+
+            if (seguimiento == null)
+                return NotFound(new { error = $"ID {dto.StepId} no existe en OfertaSeguimientos" });
+
+            // 2. ACTUALIZACIÓN DIRECTA
+            seguimiento.DocumentoPath = dto.FileName;
+            seguimiento.FechaCompletado = DateTime.Now;
+
+            // Forzar a EF a que marque la entidad como modificada
+            _context.Entry(seguimiento).State = EntityState.Modified;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "OK" });
+        }
+        catch (Exception ex)
+        {
+            // Esto te dirá exactamente qué falló (permisos, nombres de columna, etc.)
+            return StatusCode(500, new { error = ex.InnerException?.Message ?? ex.Message });
+        }
+    }
+
 }

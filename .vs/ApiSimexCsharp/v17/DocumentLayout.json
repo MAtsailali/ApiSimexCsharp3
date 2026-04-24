@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:controllers\\commercialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\confirmarsubidadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\confirmarsubidadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\envioactivodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\envioactivodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -122,19 +126,19 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OfertaSeguimiento.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\OfertaSeguimiento.cs",
-              "RelativeDocumentMoniker": "Models\\OfertaSeguimiento.cs",
-              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\OfertaSeguimiento.cs",
-              "RelativeToolTip": "Models\\OfertaSeguimiento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ConfirmarSubidaDTO.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\ConfirmarSubidaDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ConfirmarSubidaDTO.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\ConfirmarSubidaDTO.cs",
+              "RelativeToolTip": "DTO\\ConfirmarSubidaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T17:49:06.233Z"
+              "WhenOpened": "2026-04-24T22:08:40.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TrackingStepDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\TrackingStepDTO.cs",
               "RelativeDocumentMoniker": "DTO\\TrackingStepDTO.cs",
@@ -146,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DetalleEnvioDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\DetalleEnvioDto.cs",
               "RelativeDocumentMoniker": "DTO\\DetalleEnvioDto.cs",
@@ -158,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EnvioActivoDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\EnvioActivoDTO.cs",
               "RelativeDocumentMoniker": "DTO\\EnvioActivoDTO.cs",
@@ -166,12 +170,11 @@
               "RelativeToolTip": "DTO\\EnvioActivoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T17:33:28.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T17:33:28.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "OfertesController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\OfertesController.cs",
               "RelativeDocumentMoniker": "Controllers\\OfertesController.cs",
@@ -183,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
@@ -201,14 +204,26 @@
               "RelativeDocumentMoniker": "Controllers\\CommercialController.cs",
               "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\CommercialController.cs",
               "RelativeToolTip": "Controllers\\CommercialController.cs",
-              "ViewState": "AgIAAF4BAAAAAAAAAADwv3EBAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4BAAAAAAAAAADwv9IBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-14T22:04:13.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
+              "Title": "OfertaSeguimiento.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\OfertaSeguimiento.cs",
+              "RelativeDocumentMoniker": "Models\\OfertaSeguimiento.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\OfertaSeguimiento.cs",
+              "RelativeToolTip": "Models\\OfertaSeguimiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T17:49:06.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "UsuarisController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\UsuarisController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarisController.cs",
@@ -220,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "DashboardResponse.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\DashboardResponse.cs",
               "RelativeDocumentMoniker": "Models\\DashboardResponse.cs",
@@ -232,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
@@ -244,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PortsController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\PortsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PortsController.cs",
@@ -256,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Oferte.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Oferte.cs",
               "RelativeDocumentMoniker": "Models\\Oferte.cs",
@@ -268,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ClientDashboardDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\ClientDashboardDto.cs",
               "RelativeDocumentMoniker": "DTO\\ClientDashboardDto.cs",
@@ -280,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ClientListDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\ClientListDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ClientListDTO.cs",
@@ -292,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
@@ -304,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "RejectedQuoteDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\RejectedQuoteDto.cs",
               "RelativeDocumentMoniker": "DTO\\RejectedQuoteDto.cs",
@@ -316,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Usuari.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Usuari.cs",
               "RelativeDocumentMoniker": "Models\\Usuari.cs",
@@ -328,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -340,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "LoginResponseDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\LoginResponseDTO.cs",
               "RelativeDocumentMoniker": "DTO\\LoginResponseDTO.cs",
@@ -352,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CommercialDashboardDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\CommercialDashboardDto.cs",
               "RelativeDocumentMoniker": "DTO\\CommercialDashboardDto.cs",
@@ -364,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UserProfileDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\UserProfileDto.cs",
               "RelativeDocumentMoniker": "DTO\\UserProfileDto.cs",
@@ -376,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "RegisterClientRequestDto.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\RegisterClientRequestDto.cs",
               "RelativeDocumentMoniker": "DTO\\RegisterClientRequestDto.cs",
@@ -388,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Currency.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Currency.cs",
               "RelativeDocumentMoniker": "Models\\Currency.cs",
@@ -400,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -412,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Company.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Company.cs",
               "RelativeDocumentMoniker": "Models\\Company.cs",
@@ -424,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Industrium.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Industrium.cs",
               "RelativeDocumentMoniker": "Models\\Industrium.cs",
@@ -436,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Simex01Context.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Simex01Context.cs",
               "RelativeDocumentMoniker": "Models\\Simex01Context.cs",

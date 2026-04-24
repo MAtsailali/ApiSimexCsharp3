@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiSimexCsharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e147afabff4abdfc013b92cc8eb8a297af88b95a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf320c1dd9a744e35514bdb98675ff609811e1c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiSimexCsharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiSimexCsharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
