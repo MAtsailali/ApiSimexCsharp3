@@ -29,28 +29,9 @@
 
             // Lista de pasos para el seguimiento vertical
             [JsonPropertyName("tracking_steps")]
-            public List<TrackingStepDto> TrackingSteps { get; set; } = new();
+            public List<TrackingStepDTO> TrackingSteps { get; set; } = new();
         }
 
-        public class TrackingStepDto
-        {
-            [JsonPropertyName("id")]
-            public int Id { get; set; }
-
-            [JsonPropertyName("titol")]
-            public string Titol { get; set; } = string.Empty;
-
-            [JsonPropertyName("data_hora")]
-            public string DataHora { get; set; } = string.Empty;
-
-            [JsonPropertyName("te_document")]
-            public bool TeDocument { get; set; }
-
-            [JsonPropertyName("nom_fitxer")]
-            public string? NomFitxer { get; set; }
-
-            [JsonPropertyName("comentari")]
-            public string Comentari { get; set; } = string.Empty;
-        }
+       
     }
 }

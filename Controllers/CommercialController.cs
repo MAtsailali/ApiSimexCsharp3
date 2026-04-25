@@ -409,20 +409,18 @@ public class CommercialController : ControllerBase
                                (oferta.AeroportOrigen != null ? $"{oferta.AeroportOrigen.Nom} - {oferta.AeroportDesti?.Nom}" : "Ruta Terrestre"),
 
                 TrackingSteps = oferta.OfertaSeguimientos
-                    .OrderBy(s => s.Orden) // Usamos tu campo 'Orden' para que la secuencia sea lógica
-                    .Select(s => new TrackingStepDto
+                    .OrderBy(s => s.Orden)
+                    .Select(s => new TrackingStepDTO
                     {
                         Id = s.Id,
-                        // ACCEDEMOS AL TÍTULO DESDE LA TABLA RELACIONADA
-                        // (Asumo que el campo en la tabla TrackingStep se llama 'Nom' o 'Descripcio')
-                        Titol = s.TrackingStep.Nom ?? "Estado",
-
-                        // Usamos FechaCompletado o la fecha actual si es nula
-                        DataHora = s.FechaCompletado?.ToString("dd/MM/yyyy, HH:mm") ?? "Pendiente",
-
+                        Titol = s.TrackingStep != null ? s.TrackingStep.Nom : "Estado",
+                        DataHora = s.FechaCompletado.HasValue
+                            ? s.FechaCompletado.Value.ToString("dd/MM/yyyy, HH:mm")
+                            : "Pendiente",
                         TeDocument = !string.IsNullOrEmpty(s.DocumentoPath),
                         NomFitxer = s.DocumentoPath,
-                        Comentari = s.Observaciones ?? ""
+                        Comentari = s.Observaciones ?? "",
+                        EstaCompletado = s.EstaCompletado ?? 0  
                     }).ToList()
             };
 

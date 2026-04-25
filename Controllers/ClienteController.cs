@@ -134,7 +134,7 @@ namespace apiSimex.Controllers
                     // Mapeo de los pasos de seguimiento
                     TrackingSteps = oferta.OfertaSeguimientos
                         .OrderBy(s => s.Orden) // Orden lógico definido en tu tabla OfertaSeguimiento
-                        .Select(s => new TrackingStepDto
+                        .Select(s => new TrackingStepDTO
                         {
                             Id = s.Id,
                             // Nombre del paso desde la tabla maestra TrackingSteps
@@ -147,7 +147,8 @@ namespace apiSimex.Controllers
 
                             TeDocument = !string.IsNullOrEmpty(s.DocumentoPath),
                             NomFitxer = s.DocumentoPath,
-                            Comentari = s.Observaciones ?? ""
+                            Comentari = s.Observaciones ?? "",
+                            EstaCompletado = s.EstaCompletado ?? 0
                         }).ToList()
                 };
 

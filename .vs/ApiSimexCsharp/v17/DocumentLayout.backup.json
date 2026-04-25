@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\trackingstepdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\trackingstepdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\controllers\\commercialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:controllers\\commercialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\detalleenviodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\detalleenviodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\models\\simex01context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\envioactivodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\trackingstepdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\trackingstepdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\models\\ofertaseguimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:models\\ofertaseguimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\dto\\detalleenviodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|solutionrelative:dto\\detalleenviodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EB01C85-8D4D-4358-91F4-408C460B633C}|ApiSimexCsharp.csproj|d:\\proyectos\\simex\\apisimexcsharp3\\controllers\\ofertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,32 +122,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 230,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DetalleEnvioDto.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\DetalleEnvioDto.cs",
-              "RelativeDocumentMoniker": "DTO\\DetalleEnvioDto.cs",
-              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\DetalleEnvioDto.cs",
-              "RelativeToolTip": "DTO\\DetalleEnvioDto.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwvzYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T17:37:26.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EnvioActivoDTO.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\EnvioActivoDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\EnvioActivoDTO.cs",
-              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\EnvioActivoDTO.cs",
-              "RelativeToolTip": "DTO\\EnvioActivoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T17:33:28.523Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 8,
@@ -162,33 +138,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
               "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAAGIAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAuwJUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-24T14:36:09.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CommercialController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\CommercialController.cs",
               "RelativeDocumentMoniker": "Controllers\\CommercialController.cs",
               "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Controllers\\CommercialController.cs",
               "RelativeToolTip": "Controllers\\CommercialController.cs",
-              "ViewState": "AgIAAKEBAAAAAAAAAADwv7IBAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAI4BAAAAAAAAAAAcwKYBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-14T22:04:13.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Simex01Context.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\Simex01Context.cs",
               "RelativeDocumentMoniker": "Models\\Simex01Context.cs",
@@ -200,19 +176,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "TrackingStepDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\TrackingStepDTO.cs",
               "RelativeDocumentMoniker": "DTO\\TrackingStepDTO.cs",
               "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\TrackingStepDTO.cs",
               "RelativeToolTip": "DTO\\TrackingStepDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T17:46:08.468Z"
+              "WhenOpened": "2026-04-24T17:46:08.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "DetalleEnvioDto.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\DetalleEnvioDto.cs",
+              "RelativeDocumentMoniker": "DTO\\DetalleEnvioDto.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\DetalleEnvioDto.cs",
+              "RelativeToolTip": "DTO\\DetalleEnvioDto.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAiwCIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T17:37:26.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnvioActivoDTO.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\EnvioActivoDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\EnvioActivoDTO.cs",
+              "ToolTip": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\EnvioActivoDTO.cs",
+              "RelativeToolTip": "DTO\\EnvioActivoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T17:33:28.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ConfirmarSubidaDTO.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\DTO\\ConfirmarSubidaDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ConfirmarSubidaDTO.cs",
@@ -224,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "OfertaSeguimiento.cs",
               "DocumentMoniker": "D:\\Proyectos\\Simex\\ApiSimexCsharp3\\Models\\OfertaSeguimiento.cs",
               "RelativeDocumentMoniker": "Models\\OfertaSeguimiento.cs",
